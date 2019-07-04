@@ -2,14 +2,14 @@ FROM caapi/ai:latest
 
 MAINTAINER Bartuer
 
+COPY etc /etc
 COPY certs /certs
 COPY usr /usr
+COPY src /src
 COPY entry.sh /bin/entry
-COPY etc /etc
+
 
 RUN mkdir -p /home/coder/project
-
-WORKDIR /home/coder/project
 
 EXPOSE 80
 EXPOSE 5000

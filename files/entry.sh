@@ -9,10 +9,8 @@ echo $! > /tmp/redispid
 nohup /usr/bin/jupyter notebook --ip=0.0.0.0 --port=9999 --notebook-dir=/opt/notebook --no-browser --allow-root < /dev/null > /tmp/jupyterstdout 2>&1 &
 echo $! > /tmp/jupyterpid
 
-# nohup /usr/local/bin/code-server --cert=/certs/caapi_ai.crt --cert-key=/certs/caapi_ai.key --port=8443 --disable-telemetry -N -H /home/coder/project < /dev/null > /tmp/codeserverstdout 2>&1 &
-# echo $! > /tmp/codeserverpid
+nohup /usr/local/bin/code-server --cert=/certs/caapi_ai.crt --cert-key=/certs/caapi_ai.key  --disable-telemetry -N --extra-builtin-extensions-dir /extensions /home/coder/project < /dev/null > /tmp/codeserverstdout 2>&1 &
+echo $! > /tmp/codeserverpid
 
-/usr/local/bin/code-server --cert=/certs/caapi_ai.crt --cert-key=/certs/caapi_ai.key --port=8443 --disable-telemetry -N -H /home/coder/project
-# exec $@ &
-
-# /usr/bin/nginx -g "daemon off;"
+exec $@ &
+/usr/bin/nginx -g "daemon off;"
