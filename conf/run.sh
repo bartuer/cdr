@@ -5,6 +5,7 @@ docker run -it --name cdr -d \
        -p 6381:6379 \
        -p 8880:80 \
        -p 8881:81 \
+       -p 8883:82 \             # 
        -p 8443:8443 \
        -v $PWD/extensions:/extensions \
        -v $PWD:/opt/www/static \
@@ -16,4 +17,4 @@ docker run -it --name cdr -d \
        -v $PWD/conf/.htpasswd:/etc/nginx/.htpasswd \
 caapi/cdr
 
-echo "8880, 8881, 8443"
+echo "8880, 8881, 8883, 8443"
