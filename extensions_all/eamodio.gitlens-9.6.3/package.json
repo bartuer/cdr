@@ -5011,7 +5011,7 @@
 	"dependencies": {
 		"dayjs": "1.8.12",
 		"iconv-lite": "0.4.24",
-		"lodash-es": "4.17.11",
+		"lodash-es": "4.17.21",
 		"vsls": "0.3.1291"
 	},
 	"devDependencies": {
